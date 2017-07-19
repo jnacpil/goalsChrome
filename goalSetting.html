@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<body>
+<form>
+<div class="form-group">
+    <label for="insertGoals">Type a new Goal</label>
+    <input type="text" class="form-control" id="insertGoals" placeholder="Make sure it's a SMART Goal">
+  </div>
+
+  <button type="submit" class="btn btn-primary" onclick = "saveGoaltoText()">Submit</button>
+  </form>
+// use cron job to post different motivational quotes everyday
+
+
+<script>
+jQuery(function($){
+  $.get("currentGoals.txt", function(txt) {
+    $('#element-animation').text(txt)
+  })
+})
+
+</script>
+
+
+
+
+  <script type = "text/javacsript">
+
+
+  function saveGoaltoText()
+  {
+
+    var fileToLoad = document.getElementById("currentGoals.txt").files[0];
+
+      var fileReader = new FileReader();
+      fileReader.onload = function(fileLoadedEvent)
+      {
+          var textFromFileLoaded = fileLoadedEvent.target.result;
+          document.getElementById("insertGoals").value = textFromFileLoaded;
+      };
+      fileReader.readAsText(fileToLoad, "UTF-8");
+  }
+</script>
+</body>
+</html>
