@@ -7,6 +7,6 @@
 }
 
 body {
-        font-family: 'Poiret One', cursive;
+        font-family: 'Poiret One', cursive !important;
         font-size: 48px;
       }
