@@ -1,15 +1,23 @@
 <!DOCTYPE html>
-<body>
+<html>
+<head>
+</head>
+<link rel="stylesheet" type="text/css" href="style.css">
+
+<body background= "http://wallpapers-web.com/bokeh-wallpapers/4037376.html">
+<div class="background">
 <form>
-<div class="form-group">
-    <label for="insertGoals">Type a new Goal</label>
-    <input type="text" class="form-control" id="insertGoals" placeholder="Make sure it's a SMART Goal">
+  <div class="form-group">
+  <label for="insertGoals">Type a new Goal
+  </label>
+  <input type="text" class="form-control" id="insertGoals" placeholder="Make sure it's a SMART Goal">
   </div>
 
-  <button type="submit" class="btn btn-primary" onclick = "saveGoaltoText()">Submit</button>
-  </form>
+  <button type="submit" class="btn btn-primary" onclick = "saveGoaltoText()">Submit
+  </button>
+</form>
 // use cron job to post different motivational quotes everyday
-
+</div>
 
 <script>
 jQuery(function($){
@@ -23,22 +31,21 @@ jQuery(function($){
 
 
 
-  <script type = "text/javacsript">
-
+<script type = "text/javacsript">
 
   function saveGoaltoText()
   {
 
     var fileToLoad = document.getElementById("currentGoals.txt").files[0];
-
-      var fileReader = new FileReader();
-      fileReader.onload = function(fileLoadedEvent)
+    var fileReader = new FileReader();
+    fileReader.onload = function(fileLoadedEvent)
       {
           var textFromFileLoaded = fileLoadedEvent.target.result;
           document.getElementById("insertGoals").value = textFromFileLoaded;
       };
       fileReader.readAsText(fileToLoad, "UTF-8");
   }
+
 </script>
 </body>
 </html>
